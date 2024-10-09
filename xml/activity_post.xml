@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent"
+    tools:context=".PostActivity"
+>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/threeDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="16dp"
+            android:text="..."
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profileIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/threeDots"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/threeDots">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/profile" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Unblast"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/profileIcon"
+            app:layout_constraintTop_toTopOf="@id/profileIcon" />
+
+        <TextView
+            android:id="@+id/postDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 hrs - "
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@id/profileIcon"
+            app:layout_constraintStart_toStartOf="@id/username"
+            app:layout_constraintTop_toBottomOf="@id/username" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/globe"
+            app:layout_constraintBottom_toBottomOf="@id/postDate"
+            app:layout_constraintHeight_percent=".03"
+            app:layout_constraintStart_toEndOf="@id/postDate"
+            app:layout_constraintTop_toTopOf="@id/postDate"
+            app:layout_constraintWidth_percent=".03" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="30dp"
+            android:text="Buckle Up, beacause change is coming to WordPress"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/profileIcon"
+            app:layout_constraintTop_toBottomOf="@id/profileIcon" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/link"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="15dp"-->
+<!--            android:text="http://unblast.com/color-schemes"-->
+<!--            android:textColor="#758CC1"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintStart_toStartOf="@id/text"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/text" />-->
+
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/post"
+            app:layout_constraintHeight_max="300dp"
+            app:layout_constraintHeight_min="300dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/likeIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/like"
+            app:layout_constraintHeight_percent=".04"
+            app:layout_constraintStart_toStartOf="@id/text"
+            app:layout_constraintTop_toBottomOf="@id/postImage"
+            app:layout_constraintWidth_percent=".04" />
+
+        <TextView
+            android:id="@+id/like_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="12"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/likeIcon"
+            app:layout_constraintTop_toTopOf="@id/likeIcon"
+            app:layout_constraintBottom_toBottomOf="@id/likeIcon"/>
+
+        <ImageView
+            android:id="@+id/downArrow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/down"
+            app:layout_constraintEnd_toEndOf="@id/text"
+            app:layout_constraintHeight_percent=".04"
+            app:layout_constraintTop_toTopOf="@id/likeIcon"
+            app:layout_constraintWidth_percent=".04" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/smallProfileIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="5dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toStartOf="@id/downArrow"
+            app:layout_constraintTop_toTopOf="@id/downArrow"
+            app:layout_constraintBottom_toBottomOf="@id/downArrow"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/profile"
+            />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/share_times_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="1 Share"
+            app:layout_constraintEnd_toStartOf="@id/smallProfileIcon"
+            app:layout_constraintTop_toTopOf="@id/downArrow"
+            app:layout_constraintBottom_toBottomOf="@id/downArrow"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="20dp"
+            android:baselineAligned="false"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/likeIcon"
+            app:layout_constraintTop_toBottomOf="@id/likeIcon">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <ImageView
+                    android:id="@+id/likeButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/big_like"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/likeButtonText"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                />
+
+                <TextView
+                    android:id="@+id/likeButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:gravity="center_vertical"
+                    android:text="  Like"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/likeButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/likeButton"
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="118dp">
+
+                <ImageView
+                    android:id="@+id/commentButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/comment"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/commentButtonText"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+               />
+
+                <TextView
+                    android:id="@+id/commentButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:gravity="center_vertical"
+                    android:text="  Comment"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/commentButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/commentButton"
+
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="272dp">
+
+                <ImageView
+                    android:id="@+id/shareButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/share"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/shareButtonText"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                />
+
+                <TextView
+                    android:id="@+id/shareButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:gravity="center_vertical"
+                    android:text="  Share"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/shareButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/shareButton"
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
